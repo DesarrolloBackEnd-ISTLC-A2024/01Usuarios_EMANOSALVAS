@@ -6,6 +6,7 @@
         public string codigo { get; set; }
         public string nombres { get; set; }
         public string apellidos { get; set; }
+        public string mail { get; set; }
         public DateTime fecha_nacimiento { get; set; }
         public string contrasena { get; set; }
         public string estado { get; set; }

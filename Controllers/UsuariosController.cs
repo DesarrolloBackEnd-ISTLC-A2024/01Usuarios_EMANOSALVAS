@@ -19,27 +19,31 @@ namespace _01Usuarios___EMANOSALVAS.Controllers
 
         // GET api/<UsuariosController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Usuario Get(int id)
         {
-            return "value";
+            return ConexionBD.GetUsuarios(id);
         }
 
         // POST api/<UsuariosController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Usuario objUsuario)
         {
+            ConexionBD.PostUsuario(objUsuario);
+
         }
 
         // PUT api/<UsuariosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{usuarioModificacion}")]
+        public void Put(int usuarioModificacion, [FromBody] Usuario objUsuario)
         {
+            ConexionBD.PutUsuario(usuarioModificacion, objUsuario);
         }
 
         // DELETE api/<UsuariosController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{idUsuario}/{idUsuarioModificacion}")]
+        public void Delete(int idUsuario, int idUsuarioModificacion)
         {
+            ConexionBD.DeleteUsuario(idUsuario, idUsuarioModificacion);
         }
     }
 }
